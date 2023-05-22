@@ -10,15 +10,11 @@ type Props = {
 }
 
 export const Routing = ({ isAuthorized = false, setIsAuthorized }: Props) => {
+    let redirectPage = isAuthorized ? <Messanger /> : <Authentication setIsAuthorized={setIsAuthorized} />
+
     return (
         <Routes>
-            <Route
-                path="*"
-                element={isAuthorized
-                    ? <Messanger />
-                    : <Authentication setIsAuthorized={setIsAuthorized} />
-                }
-            />
+            <Route path="*" element={redirectPage} />
         </Routes>
     );
 };

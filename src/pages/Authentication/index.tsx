@@ -1,9 +1,11 @@
-const Authentication = ({setIsAuthorized} : {setIsAuthorized: Function}) => {
-    return ( 
+import AuthForm from "widgets/AuthForm";
+
+const Authentication = ({ setIsAuthorized }: { setIsAuthorized: Function }) => {
+    return (
         <div className="authentication_page">
-            <button onClick={() => setIsAuthorized(true)}>Войти</button>
+            <AuthForm setIsAuthorized={setIsAuthorized} />
         </div>
-     );
+    );
 }
- 
+
 export default Authentication;

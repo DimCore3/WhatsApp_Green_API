@@ -1,3 +1,5 @@
+import { Logout } from "features/Logout";
+
 type Props = {
     isAuthorized: boolean,
     setIsAuthorized: Function
@@ -6,8 +8,8 @@ type Props = {
 const Header = ({isAuthorized, setIsAuthorized}: Props) => {
     return (
         <header className="App-header">
-            HEADER
-            {isAuthorized && <button onClick={() => setIsAuthorized(false)}> LogOut </button>}
+            WhatsApp Header
+            <Logout isAuthorized={isAuthorized} setIsAuthorized={setIsAuthorized}> Logout </Logout>
         </header>
     );
 }
