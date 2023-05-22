@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header isAuthorized={isAuthorized} setIsAuthorized={setIsAuthorized}/>
+      <Header isAuthorized={isAuthorized} setIsAuthorized={setIsAuthorized} />
       <Routing isAuthorized={isAuthorized} setIsAuthorized={setIsAuthorized} />
     </div>
   );

@@ -7,7 +7,7 @@ type Props = {
 
 const Header = ({isAuthorized, setIsAuthorized}: Props) => {
     return (
-        <header className="App-header">
+        <header className="main_header">
             WhatsApp Header
             <Logout isAuthorized={isAuthorized} setIsAuthorized={setIsAuthorized}> Logout </Logout>
         </header>
