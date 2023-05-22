@@ -1,7 +1,7 @@
-const Authentication = () => {
+const Authentication = ({setIsAuthorized} : {setIsAuthorized: Function}) => {
     return ( 
         <div className="authentication_page">
-            authentication
+            <button onClick={() => setIsAuthorized(true)}>Войти</button>
         </div>
      );
 }
