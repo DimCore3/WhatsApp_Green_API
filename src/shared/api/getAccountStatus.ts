@@ -1,16 +1,17 @@
 import config from './config.json';
-import { DataFetch } from '../../features/Login/type';
 
-const getAccountStatus = async ({ API_ID_INSTANCE, API_TOKEN_INSTANCE }: DataFetch) => {
+const getAccountStatus = async () => {
+    const API_ID_INSTANCE: string = sessionStorage.getItem('API_ID_INSTANCE') ?? ''
+    const API_TOKEN_INSTANCE: string = sessionStorage.getItem('API_TOKEN_INSTANCE') ?? '';
+    const requestURL = `${config.API_URL}/waInstance${API_ID_INSTANCE}/getStateInstance/${API_TOKEN_INSTANCE}`
+
     try {
-        let result = await fetch(`${config.API_URL}/waInstance${API_ID_INSTANCE}/getStateInstance/${API_TOKEN_INSTANCE}`)
-            .then(result => result.json());
-        return result.stateInstance === "authorized";
-        
+        return await fetch(requestURL)
+            .then(result => result.json())
+            .then(result => result.stateInstance);
+
     } catch (e) {
-        console.error('Error getAccountStatus: ', e);
-        alert('Аккаунт не авторизован, либо заблокирован.')
-        return false;
+        return 'notAuthorized';
     }
 }
 

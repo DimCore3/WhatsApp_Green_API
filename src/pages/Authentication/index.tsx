@@ -1,10 +1,15 @@
+import { useEffect } from 'react';
 import AuthForm from "widgets/AuthForm";
+import { getAccountStatus } from "shared/api";
 
-const Authentication = ({ setIsAuthorized }: { setIsAuthorized: Function }) => {
+const Authentication = ({ setAuthStatus }: { setAuthStatus: Function }) => {
+    useEffect(() => {
+        getAccountStatus().then(result => setAuthStatus(result));
+    })
 
     return (
         <div className="authentication_page">
-            <AuthForm setIsAuthorized={setIsAuthorized} />
+            <AuthForm setAuthStatus={setAuthStatus} />
         </div>
     );
 }

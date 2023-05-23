@@ -1,15 +1,18 @@
 import { Logout } from "features/Logout";
 
 type Props = {
-    isAuthorized: boolean,
-    setIsAuthorized: Function
+    authStatus: 'processing' | 'notAuthorized' | 'authorized' | 'blocked' | 'sleepMode' | 'starting',
+    setAuthStatus: Function
 }
 
-const Header = ({isAuthorized, setIsAuthorized}: Props) => {
+const Header = ({ authStatus, setAuthStatus }: Props) => {
+
     return (
         <header className="main_header">
-            WhatsApp Header
-            <Logout isAuthorized={isAuthorized} setIsAuthorized={setIsAuthorized}> Logout </Logout>
+            <p>WhatsApp Header</p>
+            {authStatus === 'authorized' &&
+                <Logout setAuthStatus={setAuthStatus}> Logout </Logout>
+            }
         </header>
     );
 }

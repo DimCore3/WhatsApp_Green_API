@@ -1,12 +1,18 @@
+import { resetToken } from 'shared/helpers';
 import { Props } from '../type';
+import { useNavigate } from "react-router";
 
-const Logout = ({ setIsAuthorized, isAuthorized, children }: Props) => {
+const Logout = ({ setAuthStatus, children }: Props) => {
+    const navigate = useNavigate();
+
+    function clickButton() {
+        resetToken();
+        setAuthStatus('notAuthorized')
+        navigate('./authentication');
+    }
+
     return (
-        <>
-            {isAuthorized &&
-                <button onClick={() => setIsAuthorized(false)}>{children}</button>
-            }
-        </>
+        <button onClick={clickButton}>{children}</button>
     );
 }
 

@@ -1,24 +1,23 @@
-import { useDispatch } from "react-redux";
 import { Login } from "features";
-import { setIdInstance, setTokenInstance } from "shared/token/tokenSlice";
-import { useEffect } from "react";
 
-const AuthForm = ({ setIsAuthorized }: { setIsAuthorized: Function }) => {
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(setIdInstance(''));
-        dispatch(setTokenInstance(''));
-    })
+const AuthForm = ({ setAuthStatus }: { setAuthStatus: Function }) => {
 
     return (
         <div className="auth_form">
             <form>
                 <label htmlFor="idInstance_input">idInstance</label>
-                <input type="text" name="idInstance_input" onChange={e => dispatch(setIdInstance(e.target.value))} />
+                <input
+                    type="text"
+                    name="idInstance_input"
+                    onChange={e => sessionStorage.setItem('API_ID_INSTANCE', e.target.value)}
+                />
                 <label htmlFor="tokenInstance_input">tokenInstance</label>
-                <input type="text" name="tokenInstance_input" onChange={e => dispatch(setTokenInstance(e.target.value))} />
-                <Login setIsAuthorized={setIsAuthorized} />
+                <input
+                    type="text"
+                    name="tokenInstance_input"
+                    onChange={e => sessionStorage.setItem('API_TOKEN_INSTANCE', e.target.value)}
+                />
+                <Login setAuthStatus={setAuthStatus}>Login</Login>
             </form>
         </div>
     );

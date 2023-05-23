@@ -1,5 +1,4 @@
 export type Props = {
-    setIsAuthorized: Function,
-    isAuthorized: boolean,
+    setAuthStatus: Function,
     children: string,
 }
