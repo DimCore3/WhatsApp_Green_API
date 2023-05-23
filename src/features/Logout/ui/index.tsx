@@ -1,14 +1,10 @@
 import { resetToken } from 'shared/helpers';
-import { Props } from '../type';
-import { useNavigate } from "react-router";
+import { Props } from '../model';
 
 const Logout = ({ setAuthStatus, children }: Props) => {
-    const navigate = useNavigate();
-
     function clickButton() {
         resetToken();
         setAuthStatus('notAuthorized')
-        navigate('./authentication');
     }
 
     return (

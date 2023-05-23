@@ -11,6 +11,7 @@ const getAccountStatus = async () => {
             .then(result => result.stateInstance);
 
     } catch (e) {
+        console.error('Error: ',e);
         return 'notAuthorized';
     }
 }

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Download from "shared/ui/download";
+import { Download } from "shared/ui";
 import { getAccountStatus } from "shared/api";
 
 const Entrance = ({ setAuthStatus }: { setAuthStatus: Function }) => {

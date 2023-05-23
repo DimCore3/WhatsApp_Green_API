@@ -1,6 +1,6 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
+import { Download } from 'shared/ui';
 import { getAccountStatus } from 'shared/api';
-import Download from 'shared/ui/download';
 
 type Props = {
     authStatus: 'processing' | 'notAuthorized' | 'authorized' | 'blocked' | 'sleepMode' | 'starting',
@@ -14,9 +14,9 @@ const Messenger = ({ authStatus, setAuthStatus }: Props) => {
 
     return (
         <div className="messenger_page">
-            {authStatus === 'processing'
-                ? <Download />
-                : <div>Страница загрузилась</div>
+            {authStatus === 'authorized'
+                ? <div>Страница загрузилась</div>
+                : <Download />
             }
         </div>
     );

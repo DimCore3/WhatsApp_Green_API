@@ -5,15 +5,21 @@ function redirectByStatus(navigate: Function, status: StatusType) {
         navigate('./messenger');
 
     } else if (status === 'notAuthorized') {
-        navigate('./authentication')
+        navigate('./authentication');
 
     } else if (status === 'blocked') {
-        navigate('./authentication')
+        alert('Аккаунт забанен');
+        navigate('./authentication');
+    }
+    
+    else if (status === 'sleepMode') {
+        alert(' Аккаунт ушел в спящий режим. Состояние возможно, когда выключен телефон. После включения телефона может потребоваться до 5 минут для перевода состояния аккаунта в значение authorized.');
+        navigate('./authentication');
     }
     
     else if (status === 'starting') {
-        alert('Аккаунт в процессе запуска (сервисный режим). Происходит перезагрузка инстанса, сервера или инстанс в режиме обслуживания. Может потребоваться до 5 минут для перевода состояния аккаунта в значение authorized.')
-        navigate('./authentication')
+        alert('Аккаунт в процессе запуска (сервисный режим). Происходит перезагрузка инстанса, сервера или инстанс в режиме обслуживания. Может потребоваться до 5 минут для перевода состояния аккаунта в значение authorized.');
+        navigate('./authentication');
     }
 }
 

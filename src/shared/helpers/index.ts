@@ -1,2 +1,2 @@
-export {default as resetToken} from '../helpers/resetToken';
-export {default as redirectByStatus} from '../helpers/redirectByStatus';
+export {default as resetToken} from './resetToken';
+export {default as redirectByStatus} from './redirectByStatus';

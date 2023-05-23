@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import AuthForm from "widgets/AuthForm";
+import { AuthForm } from "widgets";
 import { getAccountStatus } from "shared/api";
 
 const Authentication = ({ setAuthStatus }: { setAuthStatus: Function }) => {

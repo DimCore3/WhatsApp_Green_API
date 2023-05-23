@@ -1,9 +1,5 @@
 import { Logout } from "features/Logout";
-
-type Props = {
-    authStatus: 'processing' | 'notAuthorized' | 'authorized' | 'blocked' | 'sleepMode' | 'starting',
-    setAuthStatus: Function
-}
+import { Props } from './model';
 
 const Header = ({ authStatus, setAuthStatus }: Props) => {
 

@@ -1,1 +1,1 @@
-export { default as Logout } from './ui';
+export { default as Logout } from './ui/index';

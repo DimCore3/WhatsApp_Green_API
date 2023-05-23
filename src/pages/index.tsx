@@ -1,7 +1,6 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router";
 import { Header } from 'widgets';
-import { useState, useEffect } from 'react';
 import { redirectByStatus } from "shared/helpers";
 
 const Entrance = lazy(() => import('./Entrance'));

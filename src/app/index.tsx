@@ -3,7 +3,6 @@ import { withProviders } from "./providers";
 import { Routing } from 'pages';
 
 function App() {
-
   return (
     <div className="App">
       <Routing />

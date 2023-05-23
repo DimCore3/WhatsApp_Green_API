@@ -1,2 +1,2 @@
-export { Login } from './Login/index';
-export { Logout } from './Logout/index';
+export { Login } from './Login';
+export { Logout } from './Logout';

@@ -1,19 +1,15 @@
 import { getAccountStatus } from "shared/api";
-
-type Props = {
-    setAuthStatus: Function,
-    children: string
-};
+import { Props } from '../model'
 
 const Login = ({ setAuthStatus, children }: Props) => {
 
-    async function loginFunc(e: React.MouseEvent) {
+    function loginFunc(e: React.MouseEvent) {
         e.preventDefault();
         getAccountStatus().then(result => setAuthStatus(result));
     }
 
     return (
-        <button onClick={loginFunc}> {children} </button>
+        <button onClick={loginFunc} className="login_button"> {children} </button>
     );
 }
 
