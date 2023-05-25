@@ -1,0 +1,24 @@
+.messenger_page {
+    height: 96vh;
+    background: linear-gradient(0deg, var(--app-background-grey) 80%, var(--app-background-green) 80%);
+
+    .chat_background_window {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        
+        .chat_window {
+            display: flex;
+            width: 98%;
+            height: 95%;
+            background-color: white;
+    
+            .chat_contacts_background {
+                width: 30%;
+                background-color: blue;
+            }
+        }
+    }
+}
