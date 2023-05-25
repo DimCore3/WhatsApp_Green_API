@@ -1,0 +1,37 @@
+.chatlist_contact {
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 10px);
+    height: 72px;
+
+    .contact_information {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-left: 10px;
+        width: 90%;
+        height: 100%;
+        line-height: 20px;
+        border-bottom: 2px var(--messenger-header-color) solid;
+
+        h2 {
+            color: black;
+            font-size: 19px;
+        }
+        p {
+            color: #667781;
+        }
+        .phone_and_data {
+            width: calc(100% - 10px);
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+.chatlist_contact:hover {
+    background-color: var(--messenger-header-color);
+    cursor: pointer;
+}

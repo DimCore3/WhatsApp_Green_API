@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { IconProfile } from 'shared/ui';
 import classes from './index.module.scss';
 import { AddNewContact, AddContactModule } from 'features';
+import { ChatlistContact } from 'entities/index';
 
 const Contacts = () => {
     const [showAddContactModule, setShowAddContactModule] = useState(false);
@@ -17,7 +18,11 @@ const Contacts = () => {
                         <AddNewContact showAddContactModule={showAddContactModule} setShowAddContactModule={setShowAddContactModule} />
                     </div>
                     <div className={`${classes.body_contacts} messenger_body`}>
-                        CONTACTS body
+                        <ChatlistContact />
+                        <ChatlistContact />
+                        <ChatlistContact />
+                        <ChatlistContact />
+                        <ChatlistContact />
                     </div>
                 </>
                 :
