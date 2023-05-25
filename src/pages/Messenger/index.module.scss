@@ -16,8 +16,11 @@
             background-color: white;
     
             .chat_contacts_background {
-                width: 30%;
+                width: 30%; 
                 background-color: blue;
+            }
+            .chat_messeges_background {
+                width:70%;
             }
         }
     }

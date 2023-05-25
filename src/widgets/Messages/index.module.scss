@@ -1,0 +1,11 @@
+.chat_messages {
+    height: 100%;
+
+    .body_messages {
+        background-color: aqua;
+        background-image: url("./assets/bg-chat.png");
+        background-position: center;
+        background-repeat: repeat;
+        width: 100%;
+    }
+}

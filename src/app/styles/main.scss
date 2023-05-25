@@ -1,0 +1,13 @@
+.messenger_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--messenger_header_height);
+    background-color: var(--messenger-header-color);
+    border-bottom: 1px solid var(--messenger-header-border-color);
+    padding: var(--messenger-header-padding);
+}
+
+.messenger_body {
+    height: calc((100% - var(--messenger_header_height)) - (var(--messenger-header-padding) * 2) - 1px);
+}

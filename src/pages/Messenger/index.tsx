@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Download } from 'shared/ui';
 import { getAccountStatus } from 'shared/api';
-import { Contacts, Messeges } from 'widgets';
+import { Contacts, Messages } from 'widgets';
 import classes from './index.module.scss';
 
 type Props = {
@@ -24,7 +24,7 @@ const Messenger = ({ authStatus, setAuthStatus }: Props) => {
                             <Contacts />
                         </div>
                         <div className={classes.chat_messeges_background}>
-                            <Messeges />
+                            <Messages />
                         </div>
                     </div>
                 </div>
