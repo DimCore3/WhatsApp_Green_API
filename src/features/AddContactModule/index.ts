@@ -1,0 +1,1 @@
+export { default as AddContactModule } from './ui/index';

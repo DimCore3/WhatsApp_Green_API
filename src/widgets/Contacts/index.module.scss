@@ -1,6 +1,19 @@
 .chat_contacts {
     height: 100%;
+    
+    .show_add_contact_module {
+        width: 100%;
+        height: 100%;
+        background-color: red;
+        animation: open_module 0.1s ease;
+    }
+}
 
-    .body_contacts {
+@keyframes open_module {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
     }
 }

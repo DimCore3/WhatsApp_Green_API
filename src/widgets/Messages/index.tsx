@@ -1,3 +1,4 @@
+import { IconProfile } from 'shared/ui';
 import classes from './index.module.scss';
 
 const Messages = () => {
@@ -5,10 +6,10 @@ const Messages = () => {
         <div className={classes.chat_messages}>
             <div className='messenger_header'>
                 <div>
-                    Messages header left
+                    <IconProfile />
                 </div>
                 <div>
-                    Messages header right
+                    some icons
                 </div>
             </div>
             <div className={`${classes.body_messages} messenger_body`}>

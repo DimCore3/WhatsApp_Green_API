@@ -18,12 +18,12 @@ const Messenger = ({ authStatus, setAuthStatus }: Props) => {
         <div className={classes.messenger_page}>
             {authStatus === 'authorized'
                 ?
-                <div className={classes.chat_background_window}>
-                    <div className={classes.chat_window}>
-                        <div className={classes.chat_contacts_background}>
+                <div className={classes.messenger_background_window}>
+                    <div className={classes.messenger_window}>
+                        <div className={classes.messenger_contacts_background}>
                             <Contacts />
                         </div>
-                        <div className={classes.chat_messeges_background}>
+                        <div className={classes.messenger_messages_background}>
                             <Messages />
                         </div>
                     </div>
