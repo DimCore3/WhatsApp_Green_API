@@ -1,7 +1,19 @@
-import { IconAction } from 'shared/ui';
+import { IconAction, PhoneInput } from 'shared/ui';
 import classes from './index.module.scss';
+import { Props } from './model';
 
-const AddContactModule = ({ setShowAddContactModule }: { setShowAddContactModule: Function }) => {
+const AddContactModule = ({ allContacts, setAllContacts, setShowAddContactModule }: Props) => {
+
+    function addNewContactToArray(newPhone: string) {
+        let newArray = allContacts;
+        newArray.push({
+            phone: newPhone,
+            messages: [],
+        });
+        setAllContacts(newArray);
+        setShowAddContactModule(false)
+    };
+
     return (
         <div>
             <div className={`${classes.module_header}`}>
@@ -11,7 +23,7 @@ const AddContactModule = ({ setShowAddContactModule }: { setShowAddContactModule
                 <h1>Add contact</h1>
             </div>
             <div className={`${classes.module_body}`}>
-                CONTACTS body
+                <PhoneInput addNewContactToArray={addNewContactToArray}/>
             </div>
         </div>
     );

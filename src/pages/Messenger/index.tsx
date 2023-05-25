@@ -9,7 +9,7 @@ const Messenger = ({ authStatus, setAuthStatus }: Props) => {
     const [openedContactIndex, setOpenedContactIndex] = useState(0);
 
     const [allContacts, setAllContacts] = useState<ContactType[]>([{
-        phone: "+1234567890",
+        phone: "1234567890",
         messages: [
             {
                 text: "Привет, как дела?",
@@ -40,7 +40,7 @@ const Messenger = ({ authStatus, setAuthStatus }: Props) => {
                 <div className={classes.messenger_background_window}>
                     <div className={classes.messenger_window}>
                         <div className={classes.messenger_contacts_background}>
-                            <Contacts allContacts={allContacts} />
+                            <Contacts allContacts={allContacts} setAllContacts={setAllContacts} />
                         </div>
                         <div className={classes.messenger_messages_background}>
                             <Messages />

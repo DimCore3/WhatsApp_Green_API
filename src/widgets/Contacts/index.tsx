@@ -2,19 +2,9 @@ import { useState } from 'react';
 import { IconProfile } from 'shared/ui';
 import classes from './index.module.scss';
 import { AddNewContact, AddContactModule, OpenContactChat } from 'features';
+import { Props, ContactType } from './model';
 
-type Message = {
-    text: string,
-    data: string,
-    type: 'in' | 'out'
-}
-
-type ContactType = {
-    phone: string,
-    messages: Message[],
-}
-
-const Contacts = ({allContacts}: {allContacts: ContactType[]}) => {
+const Contacts = ({ allContacts, setAllContacts }: Props) => {
     const [showAddContactModule, setShowAddContactModule] = useState(false);
 
     return (
@@ -29,10 +19,10 @@ const Contacts = ({allContacts}: {allContacts: ContactType[]}) => {
                     </div>
                     <div className={`${classes.body_contacts} messenger_body`}>
                         {allContacts.map((e: ContactType, index: number) => (
-                            <OpenContactChat 
+                            <OpenContactChat
                                 phone={e.phone}
-                                lastMessage={e.messages[e.messages.length - 1].text}
-                                lastData={e.messages[e.messages.length - 1].data}
+                                lastMessage={e.messages[e.messages.length - 1]?.text}
+                                lastData={e.messages[e.messages.length - 1]?.data}
                                 key={'contact_chat_' + index}
                             />
                         ))}
@@ -40,7 +30,11 @@ const Contacts = ({allContacts}: {allContacts: ContactType[]}) => {
                 </>
                 :
                 <div className={classes.show_add_contact_module}>
-                    <AddContactModule setShowAddContactModule={setShowAddContactModule} />
+                    <AddContactModule
+                        allContacts={allContacts}
+                        setAllContacts={setAllContacts}
+                        setShowAddContactModule={setShowAddContactModule}
+                    />
                 </div>
             }
         </div>

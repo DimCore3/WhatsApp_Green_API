@@ -10,6 +10,7 @@ export type Message = {
 }
 
 export type ContactType = {
+    photo?: string,
     phone: string,
     messages: Message[],
 }
