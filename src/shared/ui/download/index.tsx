@@ -1,9 +1,9 @@
 import './index.scss';
 
 const Download = () => {
-    return ( 
-        <div className="download_circle"> ЗАГРУЗКА </div>
-     );
+    return (
+        <div className="download_circle" />
+    );
 }
- 
+
 export default Download;

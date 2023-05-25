@@ -1,10 +1,17 @@
 .chat_contacts {
     height: 100%;
+
+    .header_contacts {
+
+    }
+
+    .body_contacts {
+        padding: 10px;
+    }
     
     .show_add_contact_module {
         width: 100%;
         height: 100%;
-        background-color: red;
         animation: open_module 0.1s ease;
     }
 }
