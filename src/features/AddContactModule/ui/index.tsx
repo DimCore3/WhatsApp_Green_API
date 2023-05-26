@@ -5,7 +5,13 @@ import { Props } from './model';
 const AddContactModule = ({ allContacts, setAllContacts, setShowAddContactModule }: Props) => {
 
     function addNewContactToArray(newPhone: string) {
-        let newArray = allContacts;
+        let newArray = [...allContacts];
+        for (let index in allContacts) {
+            if (allContacts[index].phone === newPhone) {
+                alert (' Данный номер уже есть в списке.');
+                return;
+            }
+        }
         newArray.push({
             phone: newPhone,
             messages: [],
