@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Download } from 'shared/ui';
-import { getAccountStatus } from 'shared/api';
+import { deleteNotification, getAccountStatus, receiveNotification } from 'shared/api';
 import { Contacts, Messages } from 'widgets';
 import classes from './index.module.scss';
 import { Props, ContactType } from './model';
+import { checkMessage, updateMessages } from 'shared/helpers';
 
 const Messenger = ({ authStatus, setAuthStatus }: Props) => {
     const [openedContactIndex, setOpenedContactIndex] = useState(0);
@@ -31,6 +32,21 @@ const Messenger = ({ authStatus, setAuthStatus }: Props) => {
 
     useEffect(() => {
         getAccountStatus().then(result => setAuthStatus(result));
+
+        const intervalId = setInterval(async () => {
+            let notification = await receiveNotification();
+            if (notification?.body?.typeWebhook === "incomingMessageReceived") {
+                let [phone, message] = checkMessage(notification);
+                updateMessages(allContacts, setAllContacts, message, phone)
+            };
+            if (notification) {
+                await deleteNotification(notification.receiptId)
+            }
+        }, 5000);
+
+        return () => {
+            clearInterval(intervalId);
+        };
     })
 
     return (
@@ -40,14 +56,14 @@ const Messenger = ({ authStatus, setAuthStatus }: Props) => {
                 <div className={classes.messenger_background_window}>
                     <div className={classes.messenger_window}>
                         <div className={classes.messenger_contacts_background}>
-                            <Contacts 
-                                allContacts={allContacts} 
-                                setAllContacts={setAllContacts} 
+                            <Contacts
+                                allContacts={allContacts}
+                                setAllContacts={setAllContacts}
                                 setOpenedContactIndex={setOpenedContactIndex}
                             />
                         </div>
                         <div className={classes.messenger_messages_background}>
-                            <Messages 
+                            <Messages
                                 allContacts={allContacts}
                                 setAllContacts={setAllContacts}
                                 openedContactIndex={openedContactIndex}

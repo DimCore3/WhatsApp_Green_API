@@ -1,9 +1,11 @@
 import { InputMessage } from "entities/index";
 import { Props, Message } from '../model';
+import sendTextMessage from "shared/api/sendTextMessage";
 
 const SendMessage = ({ allContacts, setAllContacts, openedContactIndex }: Props) => {
 
-    function send(text: string) {
+    async function send(text: string) {
+        await sendTextMessage(allContacts[openedContactIndex].phone, text);
         let newData = [...allContacts];
         let newMessage: Message = {
             text,

@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { ValidatePhone } from "shared/helpers";
+import { validatePhone } from "shared/helpers";
 
 const PhoneInput = ({ addNewContactToArray }: { addNewContactToArray: Function }) => {
     const [value, setValue] = useState('');
 
     function checkAndSendPhone(e: React.FormEvent<HTMLButtonElement>) {
         e.preventDefault();
-        if (ValidatePhone(value)) {
+        if (validatePhone(value)) {
             addNewContactToArray(value);
         }
     }
