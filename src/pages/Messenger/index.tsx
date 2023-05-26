@@ -35,6 +35,7 @@ const Messenger = ({ authStatus, setAuthStatus }: Props) => {
 
         const intervalId = setInterval(async () => {
             let notification = await receiveNotification();
+            console.log(notification)
             if (notification?.body?.typeWebhook === "incomingMessageReceived") {
                 let [phone, message] = checkMessage(notification);
                 updateMessages(allContacts, setAllContacts, message, phone)

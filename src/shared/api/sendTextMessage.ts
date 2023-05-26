@@ -11,7 +11,6 @@ const sendTextMessage = async (chatId: string, message: string) => {
     });
 
     try {
-        alert(chatId + '  ' + message);
         return await fetch(requestURL, {
             method: 'POST',
             headers: {
