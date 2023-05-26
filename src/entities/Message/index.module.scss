@@ -1,0 +1,29 @@
+@mixin message_layout_main_style($flex_justify) {
+    width: 100%;
+    display: flex;
+    justify-content: $flex_justify;
+    min-height: 30px;
+    color: var(--message_primary);
+    .message {
+        max-width: 30%;
+        padding: 8px;
+        border-radius: 8px;
+        p {
+            word-wrap:break-word;
+        }
+    }
+}
+
+.message_in {
+    @include message_layout_main_style(flex-start);
+    .message {
+        background-color: white;
+    }
+}
+
+.message_out {
+    @include message_layout_main_style(flex-end);
+    .message {
+        background-color: #6fd6ab;
+    }
+}
