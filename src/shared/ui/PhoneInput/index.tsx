@@ -14,7 +14,7 @@ const PhoneInput = ({ addNewContactToArray }: { addNewContactToArray: Function }
     return (
         <form action="">
             <input
-                onChange={e => setValue(e.target.value)}
+                onChange={e => setValue(e.target.value.replaceAll(' ',''))}
                 type="text"
                 placeholder="79*********"
             />

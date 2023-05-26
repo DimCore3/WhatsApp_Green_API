@@ -1,6 +1,7 @@
 import { SessionStorageInput } from "entities/index";
 import { Login } from "features";
 import { Props } from './model';
+import classes from './index.module.scss';
 
 const AuthForm = ({ setAuthStatus }: Props) => {
     const dataInputList = [
@@ -9,7 +10,7 @@ const AuthForm = ({ setAuthStatus }: Props) => {
     ]
 
     return (
-        <div className="auth_form">
+        <div className={classes.auth_form}>
             <form>
                 {dataInputList.map(data =>
                     <SessionStorageInput name={data.name} storageKey={data.storageKey} key={data.name} />
