@@ -4,7 +4,7 @@ import classes from './index.module.scss';
 import { AddNewContact, AddContactModule, OpenContactChat } from 'features';
 import { Props, ContactType } from './model';
 
-const Contacts = ({ allContacts, setAllContacts }: Props) => {
+const Contacts = ({ allContacts, setAllContacts, setOpenedContactIndex }: Props) => {
     const [showAddContactModule, setShowAddContactModule] = useState(false);
 
     return (
@@ -24,6 +24,8 @@ const Contacts = ({ allContacts, setAllContacts }: Props) => {
                                 lastMessage={e.messages[e.messages.length - 1]?.text}
                                 lastData={e.messages[e.messages.length - 1]?.data}
                                 key={'contact_chat_' + index}
+                                contactIndex={index}
+                                setOpenedContactIndex={setOpenedContactIndex}
                             />
                         ))}
                     </div>

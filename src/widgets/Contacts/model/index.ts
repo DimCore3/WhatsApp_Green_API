@@ -12,4 +12,5 @@ export type ContactType = {
 export type Props = {
     allContacts: ContactType[],
     setAllContacts: Function,
+    setOpenedContactIndex: Function,
 }
