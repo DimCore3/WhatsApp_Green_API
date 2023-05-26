@@ -1,6 +1,6 @@
 export type Message = {
     text: string,
-    data: string,
+    data?: string,
     type: 'in' | 'out'
 }
 

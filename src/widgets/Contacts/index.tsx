@@ -15,7 +15,10 @@ const Contacts = ({ allContacts, setAllContacts, setOpenedContactIndex }: Props)
                 <>
                     <div className={`${classes.header_contacts} messenger_header`}>
                         <IconProfile />
-                        <AddNewContact showAddContactModule={showAddContactModule} setShowAddContactModule={setShowAddContactModule} />
+                        <AddNewContact 
+                            showAddContactModule={showAddContactModule} 
+                            setShowAddContactModule={setShowAddContactModule} 
+                        />
                     </div>
                     <div className={`${classes.body_contacts} messenger_body`}>
                         {allContacts.map((e: ContactType, index: number) => (

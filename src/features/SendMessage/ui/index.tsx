@@ -1,9 +1,16 @@
 import { InputMessage } from "entities/index";
+import { Props, Message } from '../model';
 
-const SendMessage = () => {
+const SendMessage = ({ allContacts, setAllContacts, openedContactIndex }: Props) => {
 
     function send(text: string) {
-        alert(text);
+        let newData = [...allContacts];
+        let newMessage: Message = {
+            text,
+            type: 'out',
+        }
+        newData[openedContactIndex].messages.push(newMessage);
+        setAllContacts(newData);
     }
 
     return (

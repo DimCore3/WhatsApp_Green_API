@@ -24,7 +24,7 @@ const ChatlistContact = ({ phone, lastMessage, lastData, action }: Props) => {
                     </p>
                 </div>
                 <p>
-                    {shortLastMessage + '...'}
+                    {shortLastMessage + (shortLastMessage.length > 50 && '...')}
                 </p>
             </div>
         </div>

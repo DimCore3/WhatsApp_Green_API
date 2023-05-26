@@ -47,7 +47,11 @@ const Messenger = ({ authStatus, setAuthStatus }: Props) => {
                             />
                         </div>
                         <div className={classes.messenger_messages_background}>
-                            <Messages openedUser={allContacts[openedContactIndex]}/>
+                            <Messages 
+                                allContacts={allContacts}
+                                setAllContacts={setAllContacts}
+                                openedContactIndex={openedContactIndex}
+                            />
                         </div>
                     </div>
                 </div>

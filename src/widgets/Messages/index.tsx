@@ -2,15 +2,16 @@ import { IconProfile } from 'shared/ui';
 import classes from './index.module.scss';
 import { SendMessage } from 'features';
 import Message from 'entities/Message';
-import { ContactType } from './model';
+import { Props } from './model';
 
-const Messages = ({ openedUser }: { openedUser: ContactType }) => {
+const Messages = ({ allContacts, setAllContacts, openedContactIndex }: Props) => {
+
     return (
         <div className={classes.chat_messages}>
             <div className='messenger_header'>
                 <div className={classes.messenger_header_left}>
-                    <IconProfile imgSrc={openedUser.photo}/>
-                    <h1>+{openedUser.phone}</h1>
+                    <IconProfile imgSrc={allContacts[openedContactIndex].photo}/>
+                    <h1>+{allContacts[openedContactIndex].phone}</h1>
                 </div>
                 <div>
                     some icons
@@ -18,11 +19,19 @@ const Messages = ({ openedUser }: { openedUser: ContactType }) => {
             </div>
             <div className={`${classes.body_messages} messenger_body`}>
                 <div className={classes.all_messages}>
-                    {openedUser.messages.map((e, index) => (
-                        <Message text={e.text} type={e.type} key={openedUser.phone + '_message_' + index}/>
+                    {allContacts[openedContactIndex].messages.map((e, index) => (
+                        <Message 
+                            text={e.text} 
+                            type={e.type} 
+                            key={allContacts[openedContactIndex].phone + '_message_' + index}
+                        />
                     ))}
                 </div>
-                <SendMessage />
+                <SendMessage 
+                    allContacts={allContacts} 
+                    setAllContacts={setAllContacts}
+                    openedContactIndex={openedContactIndex}
+                />
             </div>
         </div>
     );
