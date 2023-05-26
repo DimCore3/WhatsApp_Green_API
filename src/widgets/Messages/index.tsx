@@ -1,5 +1,6 @@
 import { IconProfile } from 'shared/ui';
 import classes from './index.module.scss';
+import { SendMessage } from 'features';
 
 const Messages = () => {
     return (
@@ -13,7 +14,10 @@ const Messages = () => {
                 </div>
             </div>
             <div className={`${classes.body_messages} messenger_body`}>
-                Messages body
+                <p>
+                    Messages body
+                </p>
+                <SendMessage />
             </div>
         </div>
     );

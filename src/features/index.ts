@@ -3,3 +3,4 @@ export { Logout } from './Logout';
 export { AddNewContact } from './AddNewContact';
 export { AddContactModule } from './AddContactModule';
 export { OpenContactChat } from './OpenContactChat';
+export { SendMessage } from './SendMessage';

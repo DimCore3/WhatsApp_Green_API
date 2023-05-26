@@ -8,7 +8,7 @@ type Props = {
 }
 
 const ChatlistContact = ({ phone, lastMessage, lastData }: Props) => {
-    const shortLastMessage = lastMessage != undefined ? lastMessage.slice(0, 55) : '';
+    const shortLastMessage = lastMessage !== undefined ? lastMessage.slice(0, 55) : '';
 
     return (
         <div className={classes.chatlist_contact}>

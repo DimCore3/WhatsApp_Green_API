@@ -2,6 +2,11 @@ h1 {
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+input::selection {
+    background-color: var(--app-background-green);
+    color: white;
+}
+
 .messenger_header {
     display: flex;
     align-items: center;
