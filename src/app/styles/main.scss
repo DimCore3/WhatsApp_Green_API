@@ -20,3 +20,15 @@ input::selection {
 .messenger_body {
     height: calc((100% - var(--messenger_header_height)) - (var(--messenger-header-padding) * 2) - 1px);
 }
+
+.not_found_page {
+    background-image: radial-gradient(circle at center, rgb(255, 255, 255) 0, rgb(174, 224, 92), green 100%);
+    height: 96vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        font-size: 38px;
+    }
+}

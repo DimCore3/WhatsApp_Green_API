@@ -17,6 +17,7 @@ const AuthForm = ({ setAuthStatus }: Props) => {
                 )}
                 <Login setAuthStatus={setAuthStatus}>Login</Login>
             </form>
+            <a href="https://green-api.com/">How to register?</a>
         </div>
     );
 }

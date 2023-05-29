@@ -1,8 +1,13 @@
 .auth_form {
     background-image: linear-gradient(200px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     form {
         display: flex;
         flex-direction: column;
+        margin-bottom: 6px;
+        
         label {
             font-family: 'Courier New', Courier, monospace;
             font-size: 28px;
@@ -22,5 +27,10 @@
             border: none;
             cursor: pointer;
         }
+    }
+
+    a {
+        font-family: 'Courier New', Courier, monospace;
+        color: #000000;
     }
 }

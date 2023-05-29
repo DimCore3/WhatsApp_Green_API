@@ -7,6 +7,7 @@ const Entrance = lazy(() => import('./Entrance'));
 const Authentication = lazy(() => import('./Authentication'));
 const Messenger = lazy(() => import('./Messenger'));
 const DownloadPage = lazy(() => import('./DownloadPage'));
+const NotFound = lazy(() => import('./NotFound'));
 
 type StatusType = 'processing' | 'notAuthorized' | 'authorized' | 'blocked' | 'sleepMode' | 'starting';
 
@@ -25,7 +26,7 @@ export const Routing = () => {
                 <Route path="/" element={<Entrance setAuthStatus={setAuthStatus} />} />
                 <Route path="/authentication" element={<Authentication setAuthStatus={setAuthStatus} />} />
                 <Route path="/messenger" element={<Messenger authStatus={authStatus} setAuthStatus={setAuthStatus} />} />
-                <Route path="*" element={<h1>Страница не обнаружена</h1>} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
         </Suspense>
     );

@@ -14,7 +14,6 @@ const Messages = ({ allContacts, setAllContacts, openedContactIndex }: Props) =>
                     <h1>+{allContacts[openedContactIndex].phone}</h1>
                 </div>
                 <div>
-                    some icons
                 </div>
             </div>
             <div className={`${classes.body_messages} messenger_body`}>
